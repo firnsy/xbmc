@@ -361,6 +361,9 @@
 		18B7CA2C12944A8E009E7A26 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18B7CA1012944A8E009E7A26 /* tinyxmlparser.cpp */; };
 		18C1D22D13033F6A00CFFE59 /* GLUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C1D22B13033F6A00CFFE59 /* GLUtils.cpp */; };
 		18C1D22E13033F6A00CFFE59 /* GLUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C1D22B13033F6A00CFFE59 /* GLUtils.cpp */; };
+		18C4485D13477F8600DCEE00 /* RecentlyAddedMusicJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C4485713477F8600DCEE00 /* RecentlyAddedMusicJob.cpp */; };
+		18C4485E13477F8600DCEE00 /* RecentlyAddedTotalsJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C4485913477F8600DCEE00 /* RecentlyAddedTotalsJob.cpp */; };
+		18C4485F13477F8600DCEE00 /* RecentlyAddedVideosJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C4485B13477F8600DCEE00 /* RecentlyAddedVideosJob.cpp */; };
 		18CCEAEE1112F5B800615FC6 /* PCMRemap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CCEAEC1112F5B800615FC6 /* PCMRemap.cpp */; };
 		18CCEAEF1112F5B800615FC6 /* PCMRemap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CCEAEC1112F5B800615FC6 /* PCMRemap.cpp */; };
 		431AE5D9109C1A63007428C3 /* OverlayRendererUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 431AE5D7109C1A63007428C3 /* OverlayRendererUtil.cpp */; };
@@ -2252,6 +2255,12 @@
 		18B7CA1012944A8E009E7A26 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		18C1D22B13033F6A00CFFE59 /* GLUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLUtils.cpp; sourceTree = "<group>"; };
 		18C1D22C13033F6A00CFFE59 /* GLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUtils.h; sourceTree = "<group>"; };
+		18C4485713477F8600DCEE00 /* RecentlyAddedMusicJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedMusicJob.cpp; sourceTree = "<group>"; };
+		18C4485813477F8600DCEE00 /* RecentlyAddedMusicJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedMusicJob.h; sourceTree = "<group>"; };
+		18C4485913477F8600DCEE00 /* RecentlyAddedTotalsJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedTotalsJob.cpp; sourceTree = "<group>"; };
+		18C4485A13477F8600DCEE00 /* RecentlyAddedTotalsJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedTotalsJob.h; sourceTree = "<group>"; };
+		18C4485B13477F8600DCEE00 /* RecentlyAddedVideosJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedVideosJob.cpp; sourceTree = "<group>"; };
+		18C4485C13477F8600DCEE00 /* RecentlyAddedVideosJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedVideosJob.h; sourceTree = "<group>"; };
 		18CCEAEC1112F5B800615FC6 /* PCMRemap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PCMRemap.cpp; sourceTree = "<group>"; };
 		18CCEAED1112F5B800615FC6 /* PCMRemap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCMRemap.h; sourceTree = "<group>"; };
 		38B2BBD013131B4A00F83309 /* GlobalsHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalsHandling.h; sourceTree = "<group>"; };
@@ -6741,6 +6750,12 @@
 		E38E1E220D25F9FD00618676 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				18C4485713477F8600DCEE00 /* RecentlyAddedMusicJob.cpp */,
+				18C4485813477F8600DCEE00 /* RecentlyAddedMusicJob.h */,
+				18C4485913477F8600DCEE00 /* RecentlyAddedTotalsJob.cpp */,
+				18C4485A13477F8600DCEE00 /* RecentlyAddedTotalsJob.h */,
+				18C4485B13477F8600DCEE00 /* RecentlyAddedVideosJob.cpp */,
+				18C4485C13477F8600DCEE00 /* RecentlyAddedVideosJob.h */,
 				38B2BBD013131B4A00F83309 /* GlobalsHandling.h */,
 				18C1D22B13033F6A00CFFE59 /* GLUtils.cpp */,
 				18C1D22C13033F6A00CFFE59 /* GLUtils.h */,
@@ -8143,6 +8158,9 @@
 				F5AE40A613415D9E0004BD79 /* SystemOperations.cpp in Sources */,
 				F5AE40A713415D9E0004BD79 /* VideoLibrary.cpp in Sources */,
 				F5AE40A813415D9E0004BD79 /* XBMCOperations.cpp in Sources */,
+				18C4485D13477F8600DCEE00 /* RecentlyAddedMusicJob.cpp in Sources */,
+				18C4485E13477F8600DCEE00 /* RecentlyAddedTotalsJob.cpp in Sources */,
+				18C4485F13477F8600DCEE00 /* RecentlyAddedVideosJob.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

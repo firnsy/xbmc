@@ -1,5 +1,6 @@
+#pragma once
 /*
- *      Copyright (C) 2005-2008 Team XBMC
+ *      Copyright (C) 2005-2011 Team XBMC
  *      http://www.xbmc.org
  *
  *  This Program is free software; you can redistribute it and/or modify
@@ -19,27 +20,12 @@
  *
  */
 
-#include "GUIWindowHome.h"
-#include "guilib/Key.h"
-#include "utils/JobManager.h"
-#include "utils/RecentlyAddedVideosJob.h"
-#include "utils/RecentlyAddedMusicJob.h"
-#include "utils/RecentlyAddedTotalsJob.h"
-#include "interfaces/AnnouncementManager.h"
-#include "utils/log.h"
+#include "Job.h"
 
-CGUIWindowHome::CGUIWindowHome(void) : CGUIWindow(WINDOW_HOME, "Home.xml")
+class CRecentlyAddedTotalsJob : public CJob
 {
-}
-
-CGUIWindowHome::~CGUIWindowHome(void)
-{
-}
-
-void CGUIWindowHome::OnInitWindow()
-{  
-  CJobManager::GetInstance().AddJob(new CRecentlyAddedVideosJob(), NULL);
-  CJobManager::GetInstance().AddJob(new CRecentlyAddedMusicJob(), NULL);
-  CJobManager::GetInstance().AddJob(new CRecentlyAddedTotalsJob(), NULL);
-  CGUIWindow::OnInitWindow();
-}
+public:
+  CRecentlyAddedTotalsJob();
+  bool Update();
+  virtual bool DoWork();
+};

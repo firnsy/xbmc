@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C4489E134788F200DCEE00 /* RecentlyAddedMusicJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C44898134788F200DCEE00 /* RecentlyAddedMusicJob.cpp */; };
+		18C4489F134788F200DCEE00 /* RecentlyAddedTotalsJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C4489A134788F200DCEE00 /* RecentlyAddedTotalsJob.cpp */; };
+		18C448A0134788F200DCEE00 /* RecentlyAddedVideosJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C4489C134788F200DCEE00 /* RecentlyAddedVideosJob.cpp */; };
 		3255316612B2D02400837CD2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3255316512B2D02400837CD2 /* CoreAudio.framework */; };
 		4D5D2E1E1301758F006ABC13 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5D2E1D1301758F006ABC13 /* CFNetwork.framework */; };
 		7C99B6E9133D36E200FC2B16 /* CacheCircular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C99B6E7133D36E200FC2B16 /* CacheCircular.cpp */; };
@@ -934,6 +937,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C44898134788F200DCEE00 /* RecentlyAddedMusicJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedMusicJob.cpp; sourceTree = "<group>"; };
+		18C44899134788F200DCEE00 /* RecentlyAddedMusicJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedMusicJob.h; sourceTree = "<group>"; };
+		18C4489A134788F200DCEE00 /* RecentlyAddedTotalsJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedTotalsJob.cpp; sourceTree = "<group>"; };
+		18C4489B134788F200DCEE00 /* RecentlyAddedTotalsJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedTotalsJob.h; sourceTree = "<group>"; };
+		18C4489C134788F200DCEE00 /* RecentlyAddedVideosJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedVideosJob.cpp; sourceTree = "<group>"; };
+		18C4489D134788F200DCEE00 /* RecentlyAddedVideosJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedVideosJob.h; sourceTree = "<group>"; };
 		3255316512B2D02400837CD2 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		4D5D2E1D1301758F006ABC13 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7C99B6E7133D36E200FC2B16 /* CacheCircular.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CacheCircular.cpp; sourceTree = "<group>"; };
@@ -5437,6 +5446,12 @@
 		F56C86FA131F42EB000AD0F6 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				18C44898134788F200DCEE00 /* RecentlyAddedMusicJob.cpp */,
+				18C44899134788F200DCEE00 /* RecentlyAddedMusicJob.h */,
+				18C4489A134788F200DCEE00 /* RecentlyAddedTotalsJob.cpp */,
+				18C4489B134788F200DCEE00 /* RecentlyAddedTotalsJob.h */,
+				18C4489C134788F200DCEE00 /* RecentlyAddedVideosJob.cpp */,
+				18C4489D134788F200DCEE00 /* RecentlyAddedVideosJob.h */,
 				F56C86FB131F42EB000AD0F6 /* GlobalsHandling.h */,
 				F56C86FC131F42EB000AD0F6 /* GLUtils.cpp */,
 				F56C86FD131F42EB000AD0F6 /* GLUtils.h */,
@@ -6787,6 +6802,9 @@
 				F5AE4164134175520004BD79 /* SystemOperations.cpp in Sources */,
 				F5AE4165134175520004BD79 /* VideoLibrary.cpp in Sources */,
 				F5AE4166134175520004BD79 /* XBMCOperations.cpp in Sources */,
+				18C4489E134788F200DCEE00 /* RecentlyAddedMusicJob.cpp in Sources */,
+				18C4489F134788F200DCEE00 /* RecentlyAddedTotalsJob.cpp in Sources */,
+				18C448A0134788F200DCEE00 /* RecentlyAddedVideosJob.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

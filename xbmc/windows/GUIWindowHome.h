@@ -29,4 +29,5 @@ class CGUIWindowHome :
 public:
   CGUIWindowHome(void);
   virtual ~CGUIWindowHome(void);
+  virtual void OnInitWindow();
 };

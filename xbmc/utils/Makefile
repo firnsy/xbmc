@@ -33,6 +33,9 @@ SRCS=AlarmClock.cpp \
      PerformanceSample.cpp \
      PerformanceStats.cpp \
      RegExp.cpp \
+     RecentlyAddedVideosJob.cpp \
+     RecentlyAddedMusicJob.cpp \
+     RecentlyAddedTotalsJob.cpp \
      RingBuffer.cpp \
      RssReader.cpp \
      ScraperParser.cpp \

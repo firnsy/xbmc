@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C448A7134788FC00DCEE00 /* RecentlyAddedMusicJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C448A1134788FC00DCEE00 /* RecentlyAddedMusicJob.cpp */; };
+		18C448A8134788FC00DCEE00 /* RecentlyAddedTotalsJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C448A3134788FC00DCEE00 /* RecentlyAddedTotalsJob.cpp */; };
+		18C448A9134788FC00DCEE00 /* RecentlyAddedVideosJob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C448A5134788FC00DCEE00 /* RecentlyAddedVideosJob.cpp */; };
 		4D5D2E131301753F006ABC13 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5D2E121301753F006ABC13 /* CFNetwork.framework */; };
 		7C99B73F133D372300FC2B16 /* CacheCircular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C99B73D133D372300FC2B16 /* CacheCircular.cpp */; };
 		7C99B7AA134072CD00FC2B16 /* GUIDialogPlayEject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C99B7A8134072CD00FC2B16 /* GUIDialogPlayEject.cpp */; };
@@ -934,6 +937,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C448A1134788FC00DCEE00 /* RecentlyAddedMusicJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedMusicJob.cpp; sourceTree = "<group>"; };
+		18C448A2134788FC00DCEE00 /* RecentlyAddedMusicJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedMusicJob.h; sourceTree = "<group>"; };
+		18C448A3134788FC00DCEE00 /* RecentlyAddedTotalsJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedTotalsJob.cpp; sourceTree = "<group>"; };
+		18C448A4134788FC00DCEE00 /* RecentlyAddedTotalsJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedTotalsJob.h; sourceTree = "<group>"; };
+		18C448A5134788FC00DCEE00 /* RecentlyAddedVideosJob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecentlyAddedVideosJob.cpp; sourceTree = "<group>"; };
+		18C448A6134788FC00DCEE00 /* RecentlyAddedVideosJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentlyAddedVideosJob.h; sourceTree = "<group>"; };
 		4D5D2E121301753F006ABC13 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7C99B73D133D372300FC2B16 /* CacheCircular.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CacheCircular.cpp; sourceTree = "<group>"; };
 		7C99B73E133D372300FC2B16 /* CacheCircular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheCircular.h; sourceTree = "<group>"; };
@@ -5069,6 +5078,12 @@
 		F56C770B131EC153000AD0F6 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				18C448A1134788FC00DCEE00 /* RecentlyAddedMusicJob.cpp */,
+				18C448A2134788FC00DCEE00 /* RecentlyAddedMusicJob.h */,
+				18C448A3134788FC00DCEE00 /* RecentlyAddedTotalsJob.cpp */,
+				18C448A4134788FC00DCEE00 /* RecentlyAddedTotalsJob.h */,
+				18C448A5134788FC00DCEE00 /* RecentlyAddedVideosJob.cpp */,
+				18C448A6134788FC00DCEE00 /* RecentlyAddedVideosJob.h */,
 				F56C770C131EC153000AD0F6 /* GlobalsHandling.h */,
 				F56C770D131EC153000AD0F6 /* GLUtils.cpp */,
 				F56C770E131EC153000AD0F6 /* GLUtils.h */,
@@ -6772,6 +6787,9 @@
 				F5AE41111341751E0004BD79 /* SystemOperations.cpp in Sources */,
 				F5AE41121341751E0004BD79 /* VideoLibrary.cpp in Sources */,
 				F5AE41131341751E0004BD79 /* XBMCOperations.cpp in Sources */,
+				18C448A7134788FC00DCEE00 /* RecentlyAddedMusicJob.cpp in Sources */,
+				18C448A8134788FC00DCEE00 /* RecentlyAddedTotalsJob.cpp in Sources */,
+				18C448A9134788FC00DCEE00 /* RecentlyAddedVideosJob.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
