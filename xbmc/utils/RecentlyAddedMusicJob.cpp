@@ -27,6 +27,7 @@
 #include "guilib/GUIWindow.h"
 #include "guilib/GUIWindowManager.h"
 #include "guilib/Key.h"
+#include "utils/Crc32.h"
 
 CRecentlyAddedMusicJob::CRecentlyAddedMusicJob()
 {
@@ -72,6 +73,39 @@ bool CRecentlyAddedMusicJob::Update()
       home->SetProperty( "LatestSong." + value + ".Fanart"  , item->GetCachedFanart());
     }
   }
+  VECALBUMS albums;
+  if (musicdatabase.GetRecentlyAddedAlbums(albums, 5))
+    for (int i=0; i<(int)albums.size(); ++i)
+    {
+      CAlbum& album=albums[i];
+      CStdString   value;
+      value.Format("%i", i+1);
+      
+      CLog::Log(LOGDEBUG, "Album ID %i", album.idAlbum);
+
+      CStdString   strPath;
+      CStdString   strThumb;
+      CStdString   strSQLAlbum;
+      CStdString   strThumbPath;
+      
+      strSQLAlbum.Format("idAlbum=%i", album.idAlbum);
+      
+      int iYear    = atoi(musicdatabase.GetSingleValue("album", "iYear", strSQLAlbum));
+      int iRating    = atoi(musicdatabase.GetSingleValue("albumview", "iRating", strSQLAlbum));
+      musicdatabase.GetAlbumThumb(album.idAlbum,strThumb);
+      Crc32 crc;
+      musicdatabase.GetAlbumPath(album.idAlbum, strPath);
+      crc.ComputeFromLowerCase(strPath);
+      strThumbPath.Format("special://profile/Thumbnails/Music/Fanart/%08x.tbn", (unsigned __int32)crc);
+      
+      home->SetProperty( "LatestAlbum." + value + ".Title"   , musicdatabase.GetAlbumById(album.idAlbum));
+      home->SetProperty( "LatestAlbum." + value + ".Year"    , iYear);
+      home->SetProperty( "LatestAlbum." + value + ".Artist"  , musicdatabase.GetSingleValue("albumview", "strArtist", strSQLAlbum));      
+      home->SetProperty( "LatestAlbum." + value + ".Rating"  , iRating);
+      home->SetProperty( "LatestAlbum." + value + ".Path"    , strPath);
+      home->SetProperty( "LatestAlbum." + value + ".Thumb"   , strThumb);
+      home->SetProperty( "LatestAlbum." + value + ".Fanart"  , strThumbPath);
+    }
   musicdatabase.Close();
   return true;
 }
