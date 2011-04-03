@@ -54,15 +54,18 @@ bool CRecentlyAddedMusicJob::Update()
       CStdString   value;
       value.Format("%i", i+1);
       
-      long idAlbum = musicdatabase.GetAlbumByName(item->GetMusicInfoTag()->GetAlbum(),item->GetMusicInfoTag()->GetArtist());
-      CStdString strThumb;
+      CStdString   strThumb;
+      CStdString   strAlbum  = item->GetMusicInfoTag()->GetAlbum();
+      CStdString   strArtist = item->GetMusicInfoTag()->GetArtist();
+      
+      long idAlbum = musicdatabase.GetAlbumByName(strAlbum,strArtist);
       if (idAlbum != -1)
         musicdatabase.GetAlbumThumb(idAlbum,strThumb);
       
       home->SetProperty( "LatestSong." + value + ".Title"   , item->GetMusicInfoTag()->GetTitle());
       home->SetProperty( "LatestSong." + value + ".Year"    , item->GetMusicInfoTag()->GetYear());
-      home->SetProperty( "LatestSong." + value + ".Artist"  , item->GetMusicInfoTag()->GetArtist());      
-      home->SetProperty( "LatestSong." + value + ".Album"   , item->GetMusicInfoTag()->GetAlbum());
+      home->SetProperty( "LatestSong." + value + ".Artist"  , strArtist);      
+      home->SetProperty( "LatestSong." + value + ".Album"   , strAlbum);
       home->SetProperty( "LatestSong." + value + ".Rating"  , item->GetMusicInfoTag()->GetRating());
       home->SetProperty( "LatestSong." + value + ".Path"    , item->GetMusicInfoTag()->GetURL());
       home->SetProperty( "LatestSong." + value + ".Thumb"   , strThumb);
