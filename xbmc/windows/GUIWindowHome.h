@@ -22,12 +22,21 @@
  */
 
 #include "guilib/GUIWindow.h"
+#include "interfaces/IAnnouncer.h"
 
+class CVariant;
 class CGUIWindowHome :
-      public CGUIWindow
+      public CGUIWindow,
+      public ANNOUNCEMENT::IAnnouncer
 {
 public:
   CGUIWindowHome(void);
   virtual ~CGUIWindowHome(void);
   virtual void OnInitWindow();
+  virtual void Announce(ANNOUNCEMENT::EAnnouncementFlag flag, const char *sender, const char *message, const CVariant &data);
+
+private:
+  bool m_updateRA; // true when the recently added items needs to be queried
+
+  void AddRecentlyAddedJobs();
 };
