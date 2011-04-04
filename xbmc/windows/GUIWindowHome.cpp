@@ -32,7 +32,7 @@ using namespace ANNOUNCEMENT;
 
 CGUIWindowHome::CGUIWindowHome(void) : CGUIWindow(WINDOW_HOME, "Home.xml")
 {
-  m_updateRA = true;
+  m_updateRA = Audio | Video | Totals;
 
   CAnnouncementManager::AddAnnouncer(this);
 }
@@ -44,36 +44,49 @@ CGUIWindowHome::~CGUIWindowHome(void)
 
 void CGUIWindowHome::OnInitWindow()
 {  
-  if ( m_updateRA )
-  {
-    AddRecentlyAddedJobs();
-  }
+  AddRecentlyAddedJobs( m_updateRA );
 
   CGUIWindow::OnInitWindow();
 }
 
 void CGUIWindowHome::Announce(EAnnouncementFlag flag, const char *sender, const char *message, const CVariant &data)
 {
+  int ra_flag = 0;
+
   CLog::Log(LOGDEBUG, "GOT ANNOUNCEMENT, type: %i, from %s, message %s",(int)flag, sender, message);
 
-  if ( ( flag == Library ) &&
-       ( ( strcmp(message, "UpdateVideo") == 0 ) ||
-         ( strcmp(message, "UpdateAudio") == 0 ) ) )
+  if ( flag & Library )
   {
+    if ( ( strcmp(message, "UpdateVideo") == 0 ) ||
+         ( strcmp(message, "RemoveVideo") == 0 ) )
+      ra_flag |= Video | Totals;
+
+    if ( ( strcmp(message, "UpdateAudio") == 0 ) ||
+         ( strcmp(message, "RemoveAudio") == 0 ) )
+      ra_flag |= Audio | Totals;
+
+    if ( strcmp(message, "NewPlayCount") == 0 )
+      ra_flag |= Totals;
+
     // add the job immediatedly if the home window is active
     // otherwise defer it to the next initialisation
     if ( IsActive() )
-      AddRecentlyAddedJobs();
+      AddRecentlyAddedJobs(ra_flag);
     else
-      m_updateRA = true;
+      m_updateRA = ra_flag;
   }
 }
 
-void CGUIWindowHome::AddRecentlyAddedJobs()
+void CGUIWindowHome::AddRecentlyAddedJobs(int flag)
 {
-  CJobManager::GetInstance().AddJob(new CRecentlyAddedVideosJob(), NULL);
-  CJobManager::GetInstance().AddJob(new CRecentlyAddedMusicJob(), NULL);
-  CJobManager::GetInstance().AddJob(new CRecentlyAddedTotalsJob(), NULL);
+  if ( flag & Audio )
+    CJobManager::GetInstance().AddJob(new CRecentlyAddedMusicJob(), NULL);
 
-  m_updateRA = false;
+  if ( flag & Video )
+    CJobManager::GetInstance().AddJob(new CRecentlyAddedVideosJob(), NULL);
+
+  if ( flag & Totals )
+    CJobManager::GetInstance().AddJob(new CRecentlyAddedTotalsJob(), NULL);
+
+  m_updateRA = 0;
 }

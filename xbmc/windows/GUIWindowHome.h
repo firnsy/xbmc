@@ -24,7 +24,13 @@
 #include "guilib/GUIWindow.h"
 #include "interfaces/IAnnouncer.h"
 
-class CVariant;
+enum ERecentlyAddedFlag
+{
+  Audio = 0x1,
+  Video = 0x2,
+  Totals = 0x4
+};
+
 class CGUIWindowHome :
       public CGUIWindow,
       public ANNOUNCEMENT::IAnnouncer
@@ -36,7 +42,7 @@ public:
   virtual void Announce(ANNOUNCEMENT::EAnnouncementFlag flag, const char *sender, const char *message, const CVariant &data);
 
 private:
-  bool m_updateRA; // true when the recently added items needs to be queried
+  int m_updateRA; // flag for which recently added items needs to be queried
 
-  void AddRecentlyAddedJobs();
+  void AddRecentlyAddedJobs(int flag);
 };
