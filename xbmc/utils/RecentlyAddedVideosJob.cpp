@@ -59,7 +59,7 @@ bool CRecentlyAddedVideosJob::Update()
       
       home->SetProperty( "LatestMovie." + value + ".Title"       , item->GetLabel());
       home->SetProperty( "LatestMovie." + value + ".Thumb"       , item->GetThumbnailImage());
-      home->SetProperty( "LatestMovie." + value + ".Rating"      , atoi(strRating));
+      home->SetProperty( "LatestMovie." + value + ".Rating"      , strRating);
       home->SetProperty( "LatestMovie." + value + ".Year"        , item->GetVideoInfoTag()->m_iYear);
       home->SetProperty( "LatestMovie." + value + ".Plot"        , item->GetVideoInfoTag()->m_strPlot);
       home->SetProperty( "LatestMovie." + value + ".RunningTime" , item->GetVideoInfoTag()->m_strRuntime);
@@ -87,7 +87,7 @@ bool CRecentlyAddedVideosJob::Update()
       
       home->SetProperty( "LatestEpisode." + value + ".ShowTitle"     , item->GetVideoInfoTag()->m_strShowTitle);
       home->SetProperty( "LatestEpisode." + value + ".EpisodeTitle"  , item->GetVideoInfoTag()->m_strTitle);
-      home->SetProperty( "LatestEpisode." + value + ".Rating"        , atoi(strRating));      
+      home->SetProperty( "LatestEpisode." + value + ".Rating"        , strRating);      
       home->SetProperty( "LatestEpisode." + value + ".Plot"          , item->GetVideoInfoTag()->m_strPlot);
       home->SetProperty( "LatestEpisode." + value + ".EpisodeNo"     , EpisodeNo);
       home->SetProperty( "LatestEpisode." + value + ".EpisodeSeason" , EpisodeSeason);
