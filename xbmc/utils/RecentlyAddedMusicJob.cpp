@@ -77,32 +77,29 @@ bool CRecentlyAddedMusicJob::Update()
   if (musicdatabase.GetRecentlyAddedAlbums(albums, 5))
     for (int i=0; i<(int)albums.size(); ++i)
     {
-      CAlbum& album=albums[i];
-      CStdString   value;
+      Crc32      crc;
+      CStdString value;
+      CStdString strPath;
+      CStdString strThumb;
+      CStdString strDBpath;
+      CStdString strSQLAlbum;
+      CStdString strThumbPath;
+      CAlbum&    album=albums[i];     
+      
       value.Format("%i", i+1);
-      
-      CLog::Log(LOGDEBUG, "Album ID %i", album.idAlbum);
-
-      CStdString   strPath;
-      CStdString   strThumb;
-      CStdString   strSQLAlbum;
-      CStdString   strThumbPath;
-      
-      strSQLAlbum.Format("idAlbum=%i", album.idAlbum);
-      
-      int iYear    = atoi(musicdatabase.GetSingleValue("album", "iYear", strSQLAlbum));
-      int iRating    = atoi(musicdatabase.GetSingleValue("albumview", "iRating", strSQLAlbum));
       musicdatabase.GetAlbumThumb(album.idAlbum,strThumb);
-      Crc32 crc;
+      strDBpath.Format("musicdb://3/%i/", album.idAlbum);
+      strSQLAlbum.Format("idAlbum=%i", album.idAlbum);
       musicdatabase.GetAlbumPath(album.idAlbum, strPath);
+      
       crc.ComputeFromLowerCase(strPath);
       strThumbPath.Format("special://profile/Thumbnails/Music/Fanart/%08x.tbn", (unsigned __int32)crc);
-      
+ 
       home->SetProperty( "LatestAlbum." + value + ".Title"   , musicdatabase.GetAlbumById(album.idAlbum));
-      home->SetProperty( "LatestAlbum." + value + ".Year"    , iYear);
+      home->SetProperty( "LatestAlbum." + value + ".Year"    , atoi(musicdatabase.GetSingleValue("album", "iYear", strSQLAlbum)));
       home->SetProperty( "LatestAlbum." + value + ".Artist"  , musicdatabase.GetSingleValue("albumview", "strArtist", strSQLAlbum));      
-      home->SetProperty( "LatestAlbum." + value + ".Rating"  , iRating);
-      home->SetProperty( "LatestAlbum." + value + ".Path"    , strPath);
+      home->SetProperty( "LatestAlbum." + value + ".Rating"  , musicdatabase.GetSingleValue("albumview", "iRating", strSQLAlbum));
+      home->SetProperty( "LatestAlbum." + value + ".Path"    , strDBpath);
       home->SetProperty( "LatestAlbum." + value + ".Thumb"   , strThumb);
       home->SetProperty( "LatestAlbum." + value + ".Fanart"  , strThumbPath);
     }
