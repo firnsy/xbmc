@@ -76,6 +76,7 @@ public:
   virtual void rollback_transaction();
 
 /* virtual methods for formatting */
+  virtual std::string prepare(const char *format, ...);
   virtual std::string vprepare(const char *format, va_list args);
 
   bool in_transaction() {return _in_transaction;};
@@ -93,7 +94,6 @@ private:
   void mysqlStrAccumReset(StrAccum *p);
   void mysqlStrAccumInit(StrAccum *p, char *zBase, int n, int mx);
   char *mysql_vmprintf(const char *zFormat, va_list ap);
-
 };
 
 
@@ -174,6 +174,7 @@ or insert() operations default = false) */
 /* Go to record No (starting with 0) */
   virtual bool seek(int pos=0);
 
+  virtual bool dropIndex(const char *table, const char *index);
 };
 } //namespace
 #endif

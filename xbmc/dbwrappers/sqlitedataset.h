@@ -82,6 +82,7 @@ public:
   virtual void rollback_transaction();
 
 /* virtual methods for formatting */
+  virtual std::string prepare(const char *format, ...);
   virtual std::string vprepare(const char *format, va_list args);
 
   bool in_transaction() {return _in_transaction;}; 	
@@ -167,7 +168,7 @@ or insert() operations default = false) */
 /* Go to record No (starting with 0) */
   virtual bool seek(int pos=0);
 
-
+  virtual bool dropIndex(const char *table, const char *index);
 };
 } //namespace
 #endif

@@ -320,6 +320,18 @@ void SqliteDatabase::rollback_transaction() {
 
 // methods for formatting
 // ---------------------------------------------
+string SqliteDatabase::prepare(const char *format, ...)
+{
+  string stmt = "";
+
+  va_list args;
+  va_start(args, format);
+  stmt = vprepare(format, args);
+  va_end(args);
+
+  return stmt;
+}
+
 string SqliteDatabase::vprepare(const char *format, va_list args)
 {
   string strFormat = format;
@@ -471,6 +483,15 @@ void SqliteDataset::fill_fields() {
 
 
 //------------- public functions implementation -----------------//
+bool SqliteDataset::dropIndex(const char *table, const char *index)
+{
+  string sql;
+
+  sql = static_cast<SqliteDatabase*>(db)->prepare("DROP INDEX IF EXISTS %s", index);
+
+  return (exec(sql) == SQLITE_OK);
+}
+
 
 int SqliteDataset::exec(const string &sql) {
   if (!handle()) throw DbErrors("No Database Connection");
